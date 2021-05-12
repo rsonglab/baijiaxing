@@ -40,7 +40,15 @@ describe("bjx.getName() API", function () {
     try {
       bjx.getName(800);
     } catch (error) {
-      assert.equal(error.message, "Surname id '800' does not exist.");
+      assert.equal(error.message, "'800' does not exist");
+    }
+  });
+
+  it("bjx.getName('abc') should throw an error", function () {
+    try {
+      bjx.getName("abc");
+    } catch (error) {
+      assert.equal(error.message, "'abc' does not exist");
     }
   });
 });
@@ -74,7 +82,21 @@ describe("bjx.getID() API", function () {
     try {
       bjx.getID("肖");
     } catch (error) {
-      assert.equal(error.message, "Surname '肖' does not exist.");
+      assert.equal(error.message, "surname '肖' does not exist");
+    }
+  });
+});
+
+describe("bjx.getPinyin() API", function () {
+  it("bjx.getPinyin('宋') should return 'song'", function () {
+    assert.equal(bjx.getPinyin("宋"), "Song");
+  });
+
+  it("bjx.getPinyin('人') should be an number", function () {
+    try {
+      bjx.getPinyin("人");
+    } catch (error) {
+      assert.equal(error.message, "surname '人' does not exist");
     }
   });
 });
