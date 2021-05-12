@@ -1,4 +1,4 @@
-const list = require("./bjx.json");
+const bjx = require("./bjx.json");
 
 /**
  * Returns a random number
@@ -32,17 +32,17 @@ function parameterHandler(val, type) {
  * @returns {String} Surnames
  */
 module.exports.random = function () {
-  return list[random(0, list.length - 1)];
+  return Object.keys(bjx)[random(0, Object.keys(bjx).length - 1)]
 };
 
 /**
  * Returns an id based on surname
- * @returns {Number} id
+ * @returns {Number} id [Required]
  */
 module.exports.getID = function (name) {
   parameterHandler(name, String);
 
-  const index = list.indexOf(name);
+  const index = Object.keys(bjx).indexOf(name);
   if (index === -1) {
     throw new Error(`Surname '${name}' does not exist.`);
   }
@@ -51,12 +51,12 @@ module.exports.getID = function (name) {
 
 /**
  * Returns a surname based on id
- * @returns {String} name
+ * @returns {String} name [Required]
  */
 module.exports.getName = function (index) {
   parameterHandler(index, Number);
 
-  const name = list[index - 1];
+  const name = Object.keys(bjx)[index - 1];
   if (!name) {
     throw new Error(`Surname id '${index}' does not exist.`);
   }
@@ -66,4 +66,9 @@ module.exports.getName = function (index) {
 /**
  * A JSON array with all the Surnames
  */
-module.exports.list = list;
+module.exports.list = Object.keys(bjx);
+
+/**
+ * A JSON object with all the Surnames
+ */
+module.exports.object = bjx;

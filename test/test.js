@@ -85,14 +85,24 @@ describe("bjx.list API", function () {
   });
 
   it("bjx.list.length should return 503", function () {
-    assert.deepStrictEqual(bjx.list.length, 503);
+    assert.deepStrictEqual(bjx.list.length, 504);
   });
 
-  it("the first surname should be 赵", function () {
-    assert.deepStrictEqual(bjx.list[0], "赵");
+  it("the first surname should be 趙", function () {
+    assert.deepStrictEqual(bjx.list[0], "趙");
   });
 
   it("the third surname should be 李", function () {
     assert.deepStrictEqual(bjx.list[3], "李");
+  });
+});
+
+describe("bjx.object API", function () {
+  it("bjx.object should be an object", function () {
+    assert.typeOf(bjx.object, "object");
+  });
+
+  it("bjx.object['趙'] should return zhao", function () {
+    assert.deepStrictEqual(bjx.object["趙"], "Zhao");
   });
 });
