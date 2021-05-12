@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/rsonglab/baijiaxing/issues"
   },
-  "homepage": "https://github.com/rsonglab/baijiaxing#readme"
+  "homepage": "https://github.com/rsonglab/baijiaxing#readme",
+  "dependencies": {
+    "@rsonglab/random-generator": "^1.0.0"
+  }
 }
