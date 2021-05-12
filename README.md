@@ -15,9 +15,6 @@ npm i @rsonglab/baijiaxing
 ```js
 const bjx = require("@rsonglab/baijiaxing");
 
-bjx();
-// 公孙
-
 bjx.list;
 /* [
   '赵', '钱', '孙', '李', '周', '吴', '郑', '王', '冯', '陈',
@@ -32,17 +29,36 @@ bjx.list;
   '元', '卜', '顾', '孟', '平', '黄', '和', '穆', '萧', '尹',
   ... 403 more items
 ] */
+
+bjx.random();
+// 公孙
+
+bjx.getID("宋");
+// 118
+
+bjx.getName();
+// 宋
 ```
 
 ## API
 
-### bjx()
-
-Returns a random Surnames.
-
 ### bjx.list
 
 A JSON array with all the Surnames.
+
+### bjx.random()
+
+Return a random Surnames.
+
+### bjx.getID()
+
+`@param {Number} `
+
+Search an id by surname.
+
+### bjx.getName()
+
+Search a surname by id.
 
 ## License
 
