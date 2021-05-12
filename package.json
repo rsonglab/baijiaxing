@@ -1,6 +1,6 @@
 {
   "name": "@rsonglab/baijiaxing",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "It's just an array of Hundred Family Surnames.",
   "main": "index.js",
   "scripts": {

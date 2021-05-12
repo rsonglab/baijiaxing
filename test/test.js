@@ -22,17 +22,17 @@ describe("bjx.getName() API", function () {
 
   it("bjx.getName() should throw an error", function () {
     try {
-      bjx.getName()
+      bjx.getName();
     } catch (error) {
-      assert.equal(error.message, "missing a parameter")
+      assert.equal(error.message, "missing a parameter");
     }
   });
 
   it("bjx.getName('宋') should throw an error", function () {
     try {
-      bjx.getName("宋")
+      bjx.getName("宋");
     } catch (error) {
-      assert.equal(error.message, "need to be a number")
+      assert.equal(error.message, "need to be a number");
     }
   });
 });
@@ -48,17 +48,17 @@ describe("bjx.getID() API", function () {
 
   it("bjx.getID() should throw an error", function () {
     try {
-      bjx.getID()
+      bjx.getID();
     } catch (error) {
-      assert.equal(error.message, "missing a parameter")
+      assert.equal(error.message, "missing a parameter");
     }
   });
 
   it("bjx.getID(118) should throw an error", function () {
     try {
-      bjx.getID(118)
+      bjx.getID(118);
     } catch (error) {
-      assert.equal(error.message, "need to be a string")
+      assert.equal(error.message, "need to be a string");
     }
   });
 });
