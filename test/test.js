@@ -35,6 +35,14 @@ describe("bjx.getName() API", function () {
       assert.equal(error.message, "need to be a number");
     }
   });
+
+  it("bjx.getName(800) should throw an error", function () {
+    try {
+      bjx.getName(800);
+    } catch (error) {
+      assert.equal(error.message, "Surname id '800' does not exist.");
+    }
+  });
 });
 
 describe("bjx.getID() API", function () {
@@ -59,6 +67,14 @@ describe("bjx.getID() API", function () {
       bjx.getID(118);
     } catch (error) {
       assert.equal(error.message, "need to be a string");
+    }
+  });
+
+  it("bjx.getID('肖') should throw an error", function () {
+    try {
+      bjx.getID("肖");
+    } catch (error) {
+      assert.equal(error.message, "Surname '肖' does not exist.");
     }
   });
 });
