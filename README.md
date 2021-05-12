@@ -1,5 +1,10 @@
 # The Hundred Family Surnames (baijiaxing)
 
+[![Node.js CI](https://github.com/rsonglab/baijiaxing/actions/workflows/node.js.yml/badge.svg)](https://github.com/rsonglab/baijiaxing/actions/workflows/node.js.yml)
+[![Coverage Status](https://coveralls.io/repos/github/rsonglab/baijiaxing/badge.svg?branch=master)](https://coveralls.io/github/rsonglab/baijiaxing?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/rsonglab/baijiaxing/blob/master/LICENSE)
+[![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@rsonglab/baijiaxing)](https://www.npmjs.com/package/@rsonglab/baijiaxing)
+
 It's just an array of Hundred Family Surnames.
 
 > "The Hundred Family Surnames (Chinese: 百家姓), commonly known as Bai Jia Xing, also translated as Hundreds of Chinese Surnames, is a classic Chinese text composed of common Chinese surnames." - [Wikipedia](https://en.wikipedia.org/wiki/Hundred_Family_Surnames)
@@ -15,9 +20,6 @@ npm i @rsonglab/baijiaxing
 ```js
 const bjx = require("@rsonglab/baijiaxing");
 
-bjx();
-// 公孙
-
 bjx.list;
 /* [
   '赵', '钱', '孙', '李', '周', '吴', '郑', '王', '冯', '陈',
@@ -32,17 +34,38 @@ bjx.list;
   '元', '卜', '顾', '孟', '平', '黄', '和', '穆', '萧', '尹',
   ... 403 more items
 ] */
+
+bjx.random();
+// 公孙
+
+bjx.getID("宋");
+// 118
+
+bjx.getName();
+// 宋
 ```
 
+Live demo: [https://runkit.com/embed/uc856jmfnoj1](https://runkit.com/embed/uc856jmfnoj1)
+
 ## API
-
-### bjx()
-
-Returns a random Surnames.
 
 ### bjx.list
 
 A JSON array with all the Surnames.
+
+### bjx.random()
+
+Return a random Surnames.
+
+### bjx.getID()
+
+`@param {Number} `
+
+Search an id by surname.
+
+### bjx.getName()
+
+Search a surname by id.
 
 ## License
 
