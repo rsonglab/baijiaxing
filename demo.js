@@ -1,4 +1,4 @@
-const bjx = require("./index")
+const bjx = require("./index");
 
-console.log(bjx())
-console.log(bjx.list)
+console.log(bjx());
+console.log(bjx.list);
