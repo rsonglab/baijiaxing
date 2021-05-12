@@ -1,10 +1,12 @@
 {
   "name": "@rsonglab/baijiaxing",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "It's just an array of Hundred Family Surnames.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "author": "Ronnie Song",
   "license": "MIT",
@@ -22,6 +24,8 @@
   "homepage": "https://github.com/rsonglab/baijiaxing#readme",
   "devDependencies": {
     "chai": "^4.3.4",
+    "coveralls": "^3.1.0",
+    "istanbul": "^0.4.5",
     "mocha": "^8.4.0"
   }
 }
