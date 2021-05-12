@@ -12,5 +12,4 @@ module.exports = function () {
 /**
  * A JSON array with all the Surnames
  */
-
 module.exports.list = list;
