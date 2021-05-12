@@ -1,0 +1,23 @@
+{
+  "name": "@rsonglab/baijiaxing",
+  "version": "1.0.0",
+  "description": "It's just an array of Hundred Family Surnames.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ronnie Song",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsonglab/baijiaxing.git"
+  },
+  "keywords": [
+    "baijiaxing",
+    "surnames"
+  ],
+  "bugs": {
+    "url": "https://github.com/rsonglab/baijiaxing/issues"
+  },
+  "homepage": "https://github.com/rsonglab/baijiaxing#readme"
+}
