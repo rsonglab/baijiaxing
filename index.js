@@ -32,7 +32,7 @@ function parameterHandler(val, type) {
  * @returns {String} Surnames
  */
 module.exports.random = function () {
-  return Object.keys(bjx)[random(0, Object.keys(bjx).length - 1)]
+  return Object.keys(bjx)[random(0, Object.keys(bjx).length - 1)];
 };
 
 /**
@@ -44,7 +44,7 @@ module.exports.getID = function (name) {
 
   const index = Object.keys(bjx).indexOf(name);
   if (index === -1) {
-    throw new Error(`Surname '${name}' does not exist.`);
+    throw new Error(`surname '${name}' does not exist`);
   }
   return index + 1;
 };
@@ -53,14 +53,31 @@ module.exports.getID = function (name) {
  * Returns a surname based on id
  * @returns {String} name [Required]
  */
-module.exports.getName = function (index) {
-  parameterHandler(index, Number);
+module.exports.getName = function (val) {
+  const REGEX = /(\p{Script=Hani})+/gu;
+  var result = Object;
 
-  const name = Object.keys(bjx)[index - 1];
-  if (!name) {
-    throw new Error(`Surname id '${index}' does not exist.`);
+  if (REGEX.test(val)) {
+    parameterHandler(val, Number);
+  } else if (typeof val === "number") {
+    result = Object.keys(bjx)[val - 1];
+  } else if (typeof val === "string") {
+    result = Object.keys(bjx).find((key) => bjx[key] === val);
   }
-  return name;
+  if (!result) {
+    throw new Error(`'${val}' does not exist`);
+  }
+  return result;
+};
+
+module.exports.getPinyin = function (name) {
+  parameterHandler(name, String);
+
+  const pinyin = bjx[name];
+  if (!pinyin) {
+    throw new Error(`surname '${name}' does not exist`);
+  }
+  return pinyin;
 };
 
 /**

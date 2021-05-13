@@ -58,6 +58,12 @@ bjx.getID("宋");
 
 bjx.getName(118);
 // 宋
+
+bjx.getName("Song");
+// 宋
+
+bjx.getPinyin("宋");
+// Song
 ```
 
 Live demo: [https://runkit.com/embed/uc856jmfnoj1](https://runkit.com/embed/uc856jmfnoj1)
@@ -76,17 +82,23 @@ An object with all the Surnames.
 
 Return a random Surnames.
 
-### bjx.getID(id)
-
-`@param id [Required]`
-
-Search an id by surname.
-
-### bjx.getName(name)
+### bjx.getID(name)
 
 `@param name [Required]`
 
-Search a surname by id.
+Search an id by surname.
+
+### bjx.getName(id)
+
+`@param id/pinyin [Required]`
+
+Search a surname by id or pinyin.
+
+### bjx.getPinyin(name)
+
+`@param name [Required]`
+
+Search an pinyin by surname.
 
 ## License
 
